@@ -1,4 +1,15 @@
-
+<?php 
+    require_once('../resoures/dbhelp.php');
+ 
+    $id ='';
+       if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+        
+        $sql = 'SELECT * FROM DoNu WHERE id = '. $id;
+        $roomList = executeResult($sql);
+        
+    }
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 

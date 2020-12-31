@@ -27,7 +27,8 @@
         }else if($gia != ''){ 
             //insert
             $sql = "INSERT INTO DoNu(Anh,Gia)
-                VALUES('$anh', '$gia')";
+                VALUES('$anh','$gia')";
+
         }
     }
         execute($sql);

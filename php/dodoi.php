@@ -25,10 +25,12 @@
         if ($id1 != '') {
             //update 
             $sql = "UPDATE DoDoi SET  Anh ='$anh',  Gia = '$gia' WHERE id = " .$id1;
+
         }else if($gia != ''){ 
             //insert
             $sql = "INSERT INTO DoDoi(Anh,Gia)
                 VALUES('$anh', '$gia')";
+
 
         }
     }
@@ -105,10 +107,10 @@
                echo        '<div class="col c-3">';
 				echo		'<div class="hover">';
 				echo			'<div class="img-hover">';
-				echo				'<img src="photo/'.$class1["Anh"].'" >';
+				echo				'<img src="../php/photo/'.$class1["Anh"].'" >';
 					                				
 				echo				'<div>';
-				echo					'<button class="btn" onclick="deleteDN('.$class1['id'].')"><span class="btn1 btn-delete">Xóa</span></button>';
+				echo					'<button class="btn" onclick="deleteDD('.$class1['id'].')"><span class="btn1 btn-delete">Xóa</span></button>';
                 echo        '<button  class= "btn" onclick=\'window.open("../update/updatedonu.php?id='.$class1['id'].'","_self")\'>
                 <span class="btn1 btn-edit">Sửa</span></button>';
                                          
