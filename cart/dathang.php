@@ -170,10 +170,8 @@
                 </div>
             </div> 
 
-            <div class="fotter">
-            	<h1>Phạm Thị Vân Anh</h1>
-            	<h1>Vũ Thị Quỳnh</h1>
-            </div>           
+            <?php require_once('../resoures/footer.php') ?>        
+                       
         </div> 
         <?php require_once('../resoures/nav.php'); ?>
         <!--  -->

@@ -327,13 +327,7 @@ img {
 
 }
 
-.fotter {
-	background-color: #000;
-	padding: 30px 0;
-	color: white;
-	display: flex;
-	justify-content: space-around;
-}
+
 
 a {
 	text-decoration: none;

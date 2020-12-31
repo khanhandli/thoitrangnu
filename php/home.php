@@ -96,10 +96,8 @@
                         </div>
                     
             </div>
-            <div class="fotter">
-            	<h1>Phạm Thị Vân Anh</h1>
-            	<h1>Vũ Thị Quỳnh</h1>
-            </div>           
+            <?php require_once('../resoures/footer.php') ?>        
+                       
         </div> 
         <div class="nav">
         	<div class="name">
