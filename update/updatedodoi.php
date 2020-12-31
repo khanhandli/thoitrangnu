@@ -1,3 +1,15 @@
+<?php 
+    require_once('../resoures/dbhelp.php');
+ 
+    $id ='';
+       if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+        
+        $sql = 'SELECT * FROM DoDoi WHERE id = '. $id;
+        $roomList = executeResult($sql);
+        
+    }
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,6 +80,9 @@
         			<li class="nav-content__list--item link-active"><a href="../update/updatedodoi.php"><i class="fal fa-plus"></i> ĐỒ ĐÔI</a></li>
         			<li class="nav-content__list--item"><a href="../update/updatephukien.php"><i class="fal fa-plus"></i> PHỤ KIỆN</a></li>
         		</ul>
+                 <div onclick='window.open("../cart/dathang.php","_self")' class="nav-content--link" style="
+    margin-top: -18px; cursor: pointer;
+">GIỎ HÀNG</div>
 
         	</div>
             <a href="../index.php" class="out">

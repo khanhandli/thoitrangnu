@@ -1,4 +1,5 @@
 <?php 
+    //gọi thư viện 
 	require_once('../resoures/header1.php');
 	require_once('../resoures/dbhelp.php');
     $upload_directory = __DIR__ . DIRECTORY_SEPARATOR . "photo/";
@@ -121,12 +122,13 @@
 					                				
 				echo				'<div>';
 				echo					'<button class="btn" onclick="deleteDN('.$class1['id'].')"><span class="btn1 btn-delete">Xóa</span></button>';
-				echo        '<button  class= "btn" onclick=\'window.open("../update/updatedonu.php?id='.$class1['id'].'","_self")\'><span class="btn1 btn-edit">Sửa</span></button>';
-
-				echo				'</div>';
+                echo        '<button  class= "btn" onclick=\'window.open("../update/updatedonu.php?id='.$class1['id'].'","_self")\'>
+                <span class="btn1 btn-edit">Sửa</span></button>';
+                                         
+                echo				'</div>';
 				echo			'</div>';
 				echo			'<span class="img-hover--text">';
-				echo					$class1['Gia'] . ' ₫';
+				echo					number_format($class1['Gia'], 0, ",", ".") . ' VNĐ';
 				echo			'</span>';
 				echo		'</div>';		
 				echo	'</div>';
@@ -186,13 +188,16 @@
             <div class="nav-content">
                 <a href="../php/home.php" class="nav-content--link">TRANG CHỦ</a>
                 <a href="#" class="nav-content--link">GIỚI THIỆU</a>
-                        <a href="../php/donu.php" class="nav-content--link">XEM SẢN PHẨM</a>
+                <a href="../php/donu.php" class="nav-content--link">XEM SẢN PHẨM</a>
                 <span>THÊM SẢN PHẨM:</span>
                 <ul class="nav-content__list">
         			<li id="donu" class="nav-content__list--item"><a href="../update/updatedonu.php"><i class="fal fa-plus"></i> ĐỒ NỮ</a></li>
         			<li class="nav-content__list--item"><a href="../update/updatedodoi.php"><i class="fal fa-plus"></i> ĐỒ ĐÔI</a></li>
         			<li class="nav-content__list--item"><a href="../update/updatephukien.php"><i class="fal fa-plus"></i> PHỤ KIỆN</a></li>
-        		</ul>
+                </ul>
+                 <div onclick='window.open("../cart/dathang.php","_self")' class="nav-content--link" style="
+    margin-top: -18px; cursor: pointer;
+">GIỎ HÀNG</div>
         	</div>
             <a href="../index.php" class="out">
                     <i class="fal fa-sign-out-alt"></i>

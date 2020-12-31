@@ -505,3 +505,7 @@ nav.pagination--absolute {
 	margin-top: 20px;
     border-top: 1px solid;
 } 
+
+.nav-content > a:last-child {
+    padding: 5px 0;
+}

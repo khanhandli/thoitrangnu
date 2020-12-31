@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,7 +68,12 @@
 					<li id="donu" class="nav-content__list--item link-active"><a href="../update/updatedonu.php"><i class="fal fa-plus"></i> ĐỒ NỮ</a></li>
         			<li class="nav-content__list--item"><a href="../update/updatedodoi.php"><i class="fal fa-plus"></i> ĐỒ ĐÔI</a></li>
         			<li class="nav-content__list--item"><a href="../update/updatephukien.php"><i class="fal fa-plus"></i> PHỤ KIỆN</a></li>
-        		</ul>
+                </ul>
+                 <div onclick='window.open("../cart/dathang.php","_self")' class="nav-content--link" style="
+    margin-top: -18px; cursor: pointer;
+">GIỎ HÀNG</div>
+                
+                
         	</div>
             <a href="../index.php" class="out">
                     <i class="fal fa-sign-out-alt"></i>

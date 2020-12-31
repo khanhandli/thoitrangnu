@@ -1,4 +1,5 @@
-<?php 
+<?php
+// kiể tra 
 
     if (isset($_POST['DN'])) {
         $user = "";

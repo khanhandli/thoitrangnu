@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V.ANH $ QUỲNH SHOP</title>
+    <title>thoi trang nu</title>
     <style>
         body{
     margin: 0;
     padding: 0;
-    background: url('./assets/img/pic1.jpg');
+    background: url('./assets/img/bg.jpg');
     background-size: cover;
     background-position: center;
     font-family: sans-serif;
@@ -16,9 +16,9 @@
 }
 
 .loginbox{
-    width: 320px;
-    height: 420px;
-    background: #000;
+    width: 340px;
+    height: 400px;
+    background: rgb(0,0,0,.7);
     color: #fff;
     top: 50%;
     left: 50%;
@@ -26,6 +26,7 @@
     transform: translate(-50%,-50%);
     box-sizing: border-box;
     padding: 70px 30px;
+    border-radius: 6px;
 }
 
 .avatar{
@@ -97,8 +98,8 @@ h1{
 <body>
     <div class="loginbox">
     <img src="./assets/img/768px-HUNRE_Logo.png" class="avatar">
-        <h1>Login Here</h1>
-        <form method="post" action="resoures/">
+        <h1>Đăng nhập</h1>
+        <form method="post" action="resoures/login.php">
             <p>Username</p>
             <input type="text" name="user" placeholder="Enter Username">
             <p>Password</p>

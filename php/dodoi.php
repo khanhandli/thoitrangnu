@@ -102,24 +102,24 @@
                                         $count = $countResult['total'];
                                         $number = ceil($count/$limit);
                                         foreach ($classList1 as $class1) {
-                echo        '<div class="col c-3">';
+               echo        '<div class="col c-3">';
 				echo		'<div class="hover">';
 				echo			'<div class="img-hover">';
 				echo				'<img src="photo/'.$class1["Anh"].'" >';
 					                				
 				echo				'<div>';
 				echo					'<button class="btn" onclick="deleteDN('.$class1['id'].')"><span class="btn1 btn-delete">Xóa</span></button>';
-				echo        '<button  class= "btn" onclick=\'window.open("../update/updatedonu.php?id='.$class1['id'].'","_self")\'><span class="btn1 btn-edit">Sửa</span></button>';
-
-				echo				'</div>';
+                echo        '<button  class= "btn" onclick=\'window.open("../update/updatedonu.php?id='.$class1['id'].'","_self")\'>
+                <span class="btn1 btn-edit">Sửa</span></button>';
+                                         
+                echo				'</div>';
+                  
 				echo			'</div>';
 				echo			'<span class="img-hover--text">';
-				echo					$class1['Gia'] . ' ₫';
+				echo					number_format($class1['Gia'], 0, ",", ".") . ' VNĐ';
 				echo			'</span>';
 				echo		'</div>';		
-				echo	'</div>';
-
-                                        }
+				echo	'</div>'; }
 
                                     ?>
 
@@ -180,14 +180,32 @@
        				<li id="donu" class="nav-content__list--item"><a href="../update/updatedonu.php"><i class="fal fa-plus"></i> ĐỒ NỮ</a></li>
         			<li class="nav-content__list--item"><a href="../update/updatedodoi.php"><i class="fal fa-plus"></i> ĐỒ ĐÔI</a></li>
         			<li class="nav-content__list--item"><a href="../update/updatephukien.php"><i class="fal fa-plus"></i> PHỤ KIỆN</a></li>
-        		</ul>
+                </ul>
+                 <div onclick='window.open("../cart/dathang.php","_self")' class="nav-content--link" style="
+    margin-top: -18px; cursor: pointer;
+">GIỎ HÀNG</div>
+
         	</div>
             <a href="../index.php" class="out">
                     <i class="fal fa-sign-out-alt"></i>
                     <span>Thoát</span>
                 </a>
         </div>
-    </div>                          
+    </div> 
+    <script type="text/javascript">
+        function deleteDD(id) {
+            var option = confirm('Bạn Có Muốn Xóa Không?')
+            if(!option) {
+                return;
+            }
+            $.post('delete.php', {
+                        'id1': id
+             }, function(data) {
+                alert('Đã Xóa Thành Công');
+                location.reload();
+            })
+                }
+    </script>                           
 </body>
 
 </html>
