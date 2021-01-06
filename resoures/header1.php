@@ -14,6 +14,14 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=vietnamese"
         rel="stylesheet">
         <script type="text/javascript" src="../assets/js/jquery.js"></script>
+        <style>
+            th {
+    font-size: 1.4rem; 
+}
+td {
+    font-size: 1.2rem;
+}
+        </style>
 </head>
 
 <body>

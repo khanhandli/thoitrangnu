@@ -108,7 +108,7 @@
                 </div>
             <?php } elseif (!empty($success)) { ?>
                 <div id="notify-msg">
-                    <?= $success ?>. <a href="index.php">Tiếp tục mua hàng</a>
+                    <?= $success ?>. <a href="dathang.php">Tiếp tục mua hàng</a>
                 </div>
             <?php } else { ?>
                 <a href="dathang.php" style="color:orange;padding-bottom: 5px;"><-Trở lại</a>

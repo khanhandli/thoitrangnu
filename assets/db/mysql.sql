@@ -27,10 +27,7 @@ CREATE TABLE DoNu(
 	Anh VARCHAR(255),
 	Gia INT		
 );
-CREATE TRIGGER do_nu AFTER INSERT ON DoNu
-FOR EACH ROW
-    INSERT INTO GioHang(id,Anh,Gia)
-    VALUES (NEW.id,NEW.Anh,NEW.Gia);
+
 
 
 
@@ -40,10 +37,7 @@ CREATE TABLE DoDoi(
 	Gia INT		
 );
 
-CREATE TRIGGER do_doi AFTER INSERT ON DoDoi
-FOR EACH ROW
-    INSERT INTO GioHang(id,Anh,Gia)
-    VALUES (NEW.id,NEW.Anh,NEW.Gia);
+
 
 
 CREATE TABLE PhuKien(
@@ -51,10 +45,7 @@ CREATE TABLE PhuKien(
 	Anh VARCHAR(255),
 	Gia INT		
 );
-CREATE TRIGGER phu_kien AFTER INSERT ON PhuKien
-FOR EACH ROW
-    INSERT INTO GioHang(id,Anh,Gia)
-    VALUES (NEW.id,NEW.Anh,NEW.Gia);
+
 
 INSERT INTO users
 	VALUES('vananh','123');

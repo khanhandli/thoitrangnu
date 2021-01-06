@@ -24,14 +24,19 @@
         if ($id1 != '') {
             //update 
             $sql = "UPDATE DoNu SET  Anh ='$anh',  Gia = '$gia' WHERE id = " .$id1;
+            $sql1 = "UPDATE GioHang SET  Anh ='$anh',  Gia = '$gia' WHERE id = " .$id1;
+            
         }else if($gia != ''){ 
             //insert
             $sql = "INSERT INTO DoNu(Anh,Gia)
                 VALUES('$anh','$gia')";
+                $sql1 = "INSERT INTO GioHang(Anh,Gia)
+                VALUES('$anh', '$gia')";
 
         }
     }
         execute($sql);
+        execute($sql1);
 }
 
 ?>
