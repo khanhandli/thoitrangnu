@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php session_start(); 
+    require_once('../resoures/dbhelp.php')
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -67,17 +69,23 @@
                                 $orderProducts[] = $row;
                                 $total += $row['Gia'] * $_POST['quantity'][$row['id']];
                             }
-                            $insertOrder = mysqli_query($con, "INSERT INTO `order` (`id`, `name`, `phone`, `address`, `note`, `total`, `created_time`, `last_updated`) 
-                            VALUES (NULL, '" . $_POST['name'] . "', '" . $_POST['phone'] . "', '" . $_POST['address'] . "', '" . $_POST['note'] . "', '" . $total . "', '" . time() . "', '" . time() . "');");
-                            $orderID = $con->insert_id;
-                            $insertString = "";
-                            foreach ($orderProducts as $key => $product) {
-                                $insertString .= "(NULL, '" . $orderID . "', '" . $product['id'] . "', '" . $_POST['quantity'][$product['id']] . "', '" . $product['Gia'] . "', '" . time() . "', '" . time() . "')";
-                                if ($key != count($orderProducts) - 1) {
-                                    $insertString .= ",";
-                                }
-                            }
-                            $insertOrder = mysqli_query($con, "INSERT INTO `order_detail` (`id`, `order_id`, `product_id`, `quantity`, `price`, `created_time`, `last_updated`) VALUES " . $insertString . ";");
+                            $name = $_POST['name'];
+                            $phone = $_POST['phone'];
+                            $address = $_POST['address'];
+                            $note = $_POST['note'];
+
+                            $insertOrder = "INSERT INTO donhang(name, phone, address, note, total, created_time, last_updated) 
+                            VALUES ('$name', '$phone', '$address', '$note', '$total', NOW(), NOW());";
+                            execute($insertOrder);
+                            // $orderID = $con->insert_id;
+                            // $insertString = "";
+                            // foreach ($orderProducts as $key => $product) {
+                            //     $insertString .= "(NULL, '" . $orderID . "', '" . $product['id'] . "', '" . $_POST['quantity'][$product['id']] . "', '" . $product['Gia'] . "', '" . time() . "', '" . time() . "')";
+                            //     if ($key != count($orderProducts) - 1) {
+                            //         $insertString .= ",";
+                            //     }
+                            // }
+                            // $insertOrder = mysqli_query($con, "INSERT INTO `order_detail` (`id`, `order_id`, `product_id`, `quantity`, `price`, `created_time`, `last_updated`) VALUES " . $insertString . ";");
                             $success = "Đặt hàng thành công";
                             unset($_SESSION['cart']);
                         }
@@ -149,11 +157,11 @@
                         <input type="submit" name="update_click" value="Cập nhật" />
                     </div>
                     <hr>
-                    <!-- <div><label>Người nhận: </label><input type="text" value="" name="name" /></div>
+                    <div><label>Người nhận: </label><input type="text" value="" name="name" /></div>
                     <div><label>Điện thoại: </label><input type="text" value="" name="phone" /></div>
                     <div><label>Địa chỉ: </label><input type="text" value="" name="address" /></div>
                     <div><label>Ghi chú: </label><textarea name="note" cols="50" rows="7" ></textarea></div>
-                    <input type="submit" name="order_click" value="Đặt hàng" /> -->
+                    <input type="submit" name="order_click" value="Đặt hàng" />
                 </form>
             <?php } ?>
         </div>

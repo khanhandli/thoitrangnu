@@ -48,6 +48,10 @@
                     <a href="../php/phukien.php" class="list__item--link">
                         PHỤ KIỆN                        
                     </a>
+                </li><li class="list__item">
+                    <a href="donhang.php" class="list__item--link">
+                        CHI TIẾT ĐƠN HÀNG                       
+                    </a>
                 </li>
 </ul>
 <!-- mnu -->

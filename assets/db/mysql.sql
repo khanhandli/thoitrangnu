@@ -58,3 +58,13 @@ FOR EACH ROW
 
 INSERT INTO users
 	VALUES('vananh','123');
+
+
+	CREATE TABLE donhang(id INT PRIMARY KEY AUTO_INCREMENT
+    , name VARCHAR(255), 
+    phone VARCHAR(255), 
+    address VARCHAR(255), 
+    note VARCHAR(255), 
+    total INT, 
+    created_time DATETIME, 
+    last_updated DATETIME);
